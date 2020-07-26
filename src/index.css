@@ -117,7 +117,8 @@ li {
 }
 
 section {
-  margin: 50px 0;
+  padding: 20px 0;
+  min-height: 40vh;
 }
 
 .wrapper {
@@ -142,9 +143,9 @@ button {
 
 
 /* HEADER */
-header {
+/* header {
   height: 100vh;
-}
+} */
 
 .headerSection {
   display: flex;
@@ -170,6 +171,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  min-height: 5vh;
 }
 
 nav a {
@@ -188,8 +190,8 @@ nav a:focus {
 
 .heroImage {
   width: 100%;
-  min-height: 90vh;
-	background: url(./assets/hero.jpg) no-repeat top center fixed;
+  min-height: 40vh;
+	background: url(./assets/hero.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
   background-size: cover;
@@ -198,7 +200,6 @@ nav a:focus {
 
 
 /* NEW TRIP */
-
 
 form {
   /* display flexed the form so that the inputs are stacked on top of each other */
@@ -258,6 +259,9 @@ select {
   background-color: #ffffff;
   font-family: 'Barlow', sans-serif;
 }
+select:required {
+    box-shadow:none;
+}
 
 .submitCity {
   width: 85px;
@@ -314,7 +318,9 @@ select {
 .suggestedRestaurantList {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+}
+.suggestedRestaurantList {
+  /* flex-wrap: wrap; */
 }
 
 .listContainer {
@@ -474,6 +480,7 @@ button.tripsHeaders {
   position: absolute;
   top: 20px;
   right: 20px;
+  /* align-self: center; */
 }
 
 .expandedSavedTrip ul {
@@ -487,6 +494,9 @@ button.tripsHeaders {
 .expandedSavedTrip li {
   border: 1px solid black;
   align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .expandedSavedTrip img {
@@ -499,6 +509,10 @@ button.tripsHeaders {
   width: 100%;
   margin: 10px auto;
   resize: none;
+}
+
+.expandedSavedTrip .bold {
+  font-weight: bold;
 }
 
 /* End of Expanded saved trip - modal */
@@ -535,6 +549,7 @@ footer {
   color: #ffffff;
   background-color: #5D5D5D;
   padding: 1.5rem;
+  min-height: 5vh;
 }
 /* End of FOOTER */
 
@@ -560,6 +575,7 @@ footer {
   .NewTrip {
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
   }
   form {
     width: 80%;;

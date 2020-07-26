@@ -77,27 +77,28 @@ class ExpandedSavedTrip extends Component {
                     : <img src={require('../../assets/placeholder.png')} alt="no image available" />
                   }
 
-                  <p>{restaurant.name}</p>
+                  <p><span class="bold">Name: </span>{restaurant.name}</p>
 
-                  <p>{restaurant.cuisineType}</p>
+                  <p><span class="bold">Cuisine: </span>{restaurant.cuisineType}</p>
 
                   <address>
-                    <p>{restaurant.address}</p>
-                    <p>{restaurant.phoneNumber}</p>
+                    <p><span class="bold">Address: </span>{restaurant.address}</p>
+                    <p><span class="bold">Phone Number: </span>{restaurant.phoneNumber}</p>
                   </address>
 
-                  <p>Average cost for two: ${restaurant.avgCostForTwo}</p>
+                  <p><span class="bold">Average cost for two: </span>${restaurant.avgCostForTwo}</p>
                   
-                  <p>{restaurant.rating}</p>
+                  <p><span class="bold">Rating: </span>{restaurant.rating}</p>
 
-                  {restaurant.userNote 
+                  {/* {restaurant.userNote 
                     ? <p>{restaurant.userNote}</p>
                     : <form action="SUBMIT">
                         <label htmlFor="restaurantNotes" className="sr-only">Leave a note about your experience.</label>
                         <textarea name="restaurantNotes" id="restaurantNotes" cols="30" rows="10" placeholder="Leave a note about your experience." onChange={this.grabNoteValue}></textarea>
                         <button type="submit" onClick={(e) => {this.saveNote(e, restaurant.name)}}>Add Note</button>
                       </form>
-                  }
+                  } */}
+
                   {/* clicking this will delete the restaurant from the database */}
                   <button onClick={this.deleteRestaurant}><i className="fas fa-times" aria-label="close"></i></button>
                 </li>

@@ -19,47 +19,77 @@ class SuggestedRestaurantCard extends Component {
                 avgCostForTwo: props.restaurant.average_cost_for_two,
                 rating: props.restaurant.user_rating.aggregate_rating,
                 featuredImg: props.restaurant.featured_image,
-                added: false
+                // added: false
             },
+            addedCheck: false
         }
     }
 
-    addToList = (e) => {
-        this.setState ({
-            restaurant: {
-                ...this.state.restaurant,
-                added: true,
-            }
-        }, () => {
-            this.props.addRestaurantToList(this.state.restaurant);   
+
+
+    addToList = () => {
+        // map through restaurants lists to make sure that the restaurant wasn't added before
+
+        this.props.addRestaurantToList(this.state.restaurant);
+        this.setState({
+            addedCheck: true
         })
+        // this.setState({
+        //     addedCheck: [...this.props.savedRestaurants].includes(this.state.restaurant, 0)
+        // }, () => {
+        //     if (this.state.addedCheck !== true) {
+        //         this.setState({
+        //             restaurant: {
+        //                 ...this.state.restaurant,
+        //                 // added: true,
+        //             }
+        //         }, () => {
+        //             this.props.addRestaurantToList(this.state.restaurant);
+        //         })
+        //     } else {
+        //         // console.log("Ya RAB");
+        //         this.props.addRestaurantToList(this.state.restaurant);
+        //     }
+        // })
+
+        // console.log("state: ", this.state.restaurant);
+        // console.log("props: ", this.props.savedRestaurants);
+
     }
 
     render() {
-        let elementToDisplay;
+        let elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i> add to list</button>;
 
-        if (!this.state.added) {
-            elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i> add to list</button>   
+
+        // if (!this.state.addedCheck) {
+        //     elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i> add to list</button>
+        // } else {
+        //     elementToDisplay = <p><i className="addedToList" className="fas fa-check" aria-label="added to restaurant list"></i></p>
+        // }
+
+        const addedCheck = this.props.savedRestaurants.includes(this.state.restaurant);
+
+        if (!addedCheck) {
+            elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i>Add to list</button>
         } else {
-            elementToDisplay = <p><i className="addedToList" className="fas fa-check" aria-label="added to restaurant list"></i></p>
+            elementToDisplay = <p className="addToList"><i className="fas fa-check" aria-label="added to restaurant list"></i></p>
         }
 
-
-        this.props.savedRestaurants.filter((item) => {
-            if (item.name !== this.state.restaurant.name) {
-                return elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i>Add to list</button>
-            } else {
-                return elementToDisplay = <p className="addToList"><i className="fas fa-check" aria-label="added to restaurant list"></i></p>
-            }
-        })
+        // this.props.savedRestaurants.filter((item) => {
+        //     if (item.name !== this.state.restaurant.name) {
+        //         return elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i>Add to list</button>
+        //     } else {
+        //         return elementToDisplay = <p className="addToList"><i className="fas fa-check" aria-label="added to restaurant list"></i></p>
+        //     }
+        // })
 
         return (
             <div className="card">
                 {elementToDisplay}
 
                 {this.state.restaurant.featuredImg !== ""
-                ? <img src={this.state.restaurant.featuredImg} alt={this.state.restaurant.name}/>
-                : <img src={require('../../assets/placeholder.png')} alt="no image available"/>}
+                    ? <img src={this.state.restaurant.featuredImg} alt={this.state.restaurant.name} />
+                    : <img src={require('../../assets/placeholder.png')} alt="no image available" />}
 
                 <p><span className="restaurantTitle restaurantName">{this.state.restaurant.name}</span> - {this.state.restaurant.cuisineType}</p>
 
@@ -69,7 +99,7 @@ class SuggestedRestaurantCard extends Component {
                 </address>
 
                 <p>Average cost for two: ${this.state.restaurant.avgCostForTwo}</p>
-                
+
                 <p><span className="rating">{this.state.restaurant.rating}</span></p>
             </div>
         )

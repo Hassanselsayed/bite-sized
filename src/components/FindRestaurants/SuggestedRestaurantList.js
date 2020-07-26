@@ -18,11 +18,10 @@ class SuggestedRestaurantList extends Component {
       // storing the list of restaurants from axios call
       results: [],
       // stores the list of saved restaurants that will be saved to the trip 
-      savedRestaurants: [],
+      savedRestaurants: props.trip.restaurantList,
       cityId: "",
       start: 0,
       isLoading: false,
-      added: false
     }
   }
 
@@ -73,20 +72,42 @@ class SuggestedRestaurantList extends Component {
   componentWillReceiveProps() {
       this.setState({
         start: 0,
+      }, () => {
       })
+      if (this.props.cityId !== this.state.cityId) {
+        this.setState({
+          // savedRestaurants: []
+        })
+      }
   }
+
+
 
   // takes an individual restaurant object and appends it to savedRestaurants array in the state. This function is passed as props to SuggestedRestaurantCard component and is executed when user clicks the "add to list" button. It also calls a function from parent (NewTrip) that passes the savedRestarants array to it, and saves it in its state (in trip object)
   addRestaurantToList = (restaurantObj) => {
-    this.setState(prevState => {
-      return {
-        savedRestaurants: [...prevState.savedRestaurants, restaurantObj],
-        added: true
-      }
-    }, () => {
-      //  callback from NewTrip.js
-      this.props.addRestaurantListToTrip(this.state.savedRestaurants);
-    })
+
+    const addedCheck = this.state.savedRestaurants.includes(restaurantObj);
+    console.log(restaurantObj);
+    console.log(this.state.savedRestaurants);
+    console.log(addedCheck);
+
+    if (!addedCheck) {
+      this.setState(prevState => {
+        return {
+          savedRestaurants: [...prevState.savedRestaurants, restaurantObj],
+          // added: true
+        }
+      }, () => {
+        //  callback from NewTrip.js
+          this.props.addRestaurantListToTrip(this.state.savedRestaurants, restaurantObj);
+      })
+    } else {
+      console.log("Ya RAB");
+    }
+
+    // this.props.addRestaurantListToTrip(this.state.savedRestaurants, restaurantObj);
+
+
   }
 
   displayMore = () => {
@@ -129,7 +150,7 @@ class SuggestedRestaurantList extends Component {
         : ( this.state.isLoading === true )
         ? <p>loading restaurants...</p>
         : this.state.results.map((item) => {
-          item.restaurant.added = this.state.added;
+          // item.restaurant.added = this.state.added;
           return (
             // if the find restaurant button is clicked, show this
             <SuggestedRestaurantCard

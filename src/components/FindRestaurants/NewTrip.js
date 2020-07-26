@@ -107,7 +107,7 @@ class NewTrip extends Component {
         document.getElementById("citySearch").focus();
         this.setState({
             suggestedCities: []
-        })
+        });
     }
 
     // this function listens for user typing, binds the city name to the user typing and fires the axios call 
@@ -119,8 +119,12 @@ class NewTrip extends Component {
                 if (this.state.cityName.length % 2 === 0) {
                     this.getInfo(this.state.cityName)
                 }
+            } else {
+                this.setState({
+                    suggestedCities: []
+                });
             }
-        })
+        });
     }
 
     // this function binds the city name to the select change 
@@ -165,8 +169,9 @@ class NewTrip extends Component {
     }
 
     // add saved restaurant list from SuggestedRestaurantList component to the trip object in state (called in SuggestedRestaurantCard when user clicks 'add to list' button)
-    addRestaurantListToTrip = (restaurantList) => {
+    addRestaurantListToTrip = (restaurantList, restaurantObj) => {
         // copies the object within this.state.trip
+
         const prevState = this.state.trip;
         // adds restaurant list as another property to the copied trip object
         prevState.restaurantList = restaurantList;
@@ -174,6 +179,9 @@ class NewTrip extends Component {
         this.setState({
             trip: prevState,
         })
+        
+
+
     }
 
     saveToDb = (e) => {
@@ -241,13 +249,13 @@ class NewTrip extends Component {
                                 autoComplete="off"
                                 type="search"
                                 id="citySearch"
-                                placeholder="search cities near you"
+                                placeholder="Search cities in North America"
                                 ref={input => this.search = input}
                                 onChange={this.handleCityInputChange}
                                 value={this.state.cityName}
                             />
 
-                            <Suggestions results={this.state.suggestedCities} getUserChoice={this.getUserChoice} />
+                            <Suggestions results={this.state.suggestedCities} getUserChoice={this.getUserChoice} cityName={this.state.cityName} />
 
                             <button id="citySearchSubmit" className="submitCity">GO</button>
                         </div>
@@ -259,12 +267,12 @@ class NewTrip extends Component {
                             type="text"
                             className="tripName"
                             ref={trip => this.text = trip}
-                            placeholder="create a new trip"
+                            placeholder="Create a new trip"
                             onChange={this.handleNameInputChange}
                             value={this.state.tripNickName}
                         />
 
-                        <button id="saveTrip" className="saveTripButton" onClick={this.saveToDb}>save trip</button>
+                        <button id="saveTrip" className="saveTripButton" onClick={this.saveToDb}>Save trip</button>
                     </form>
 
                 <div className="listContainer">
@@ -282,7 +290,7 @@ class NewTrip extends Component {
                         Saved restaurants
                     </button>
                     
-                    <SuggestedRestaurantList cityId={this.state.cityId} listToDisplay={this.state.listToDisplay} ref="child" addRestaurantListToTrip={this.addRestaurantListToTrip} />
+                    <SuggestedRestaurantList cityId={this.state.cityId} listToDisplay={this.state.listToDisplay} ref="child" addRestaurantListToTrip={this.addRestaurantListToTrip} trip={this.state.trip} />
                 </div>
             </section>
         )
