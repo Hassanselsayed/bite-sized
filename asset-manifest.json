@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/biteSized/static/css/main.ba8550fe.chunk.css",
-    "main.js": "/biteSized/static/js/main.190923fd.chunk.js",
-    "main.js.map": "/biteSized/static/js/main.190923fd.chunk.js.map",
+    "main.js": "/biteSized/static/js/main.4959c70d.chunk.js",
+    "main.js.map": "/biteSized/static/js/main.4959c70d.chunk.js.map",
     "runtime-main.js": "/biteSized/static/js/runtime-main.116d607a.js",
     "runtime-main.js.map": "/biteSized/static/js/runtime-main.116d607a.js.map",
     "static/js/2.9149ece4.chunk.js": "/biteSized/static/js/2.9149ece4.chunk.js",
     "static/js/2.9149ece4.chunk.js.map": "/biteSized/static/js/2.9149ece4.chunk.js.map",
     "index.html": "/biteSized/index.html",
-    "precache-manifest.3ddea7e872af715f3357852283fd1ef6.js": "/biteSized/precache-manifest.3ddea7e872af715f3357852283fd1ef6.js",
+    "precache-manifest.c0e8ec9fc2a27d1031c111ddc91920ce.js": "/biteSized/precache-manifest.c0e8ec9fc2a27d1031c111ddc91920ce.js",
     "service-worker.js": "/biteSized/service-worker.js",
     "static/css/main.ba8550fe.chunk.css.map": "/biteSized/static/css/main.ba8550fe.chunk.css.map",
     "static/js/2.9149ece4.chunk.js.LICENSE.txt": "/biteSized/static/js/2.9149ece4.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.116d607a.js",
     "static/js/2.9149ece4.chunk.js",
     "static/css/main.ba8550fe.chunk.css",
-    "static/js/main.190923fd.chunk.js"
+    "static/js/main.4959c70d.chunk.js"
   ]
 }
