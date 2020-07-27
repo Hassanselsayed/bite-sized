@@ -179,9 +179,6 @@ class NewTrip extends Component {
         this.setState({
             trip: prevState,
         })
-        
-
-
     }
 
     saveToDb = (e) => {
@@ -257,7 +254,7 @@ class NewTrip extends Component {
 
                             <Suggestions results={this.state.suggestedCities} getUserChoice={this.getUserChoice} cityName={this.state.cityName} />
 
-                            <button id="citySearchSubmit" className="submitCity">GO</button>
+                            <button id="citySearchSubmit" className="submitCity" onClick={this.resetSavedRestaurants}>GO</button>
                         </div>
 
                         <label htmlFor="tripName">Please enter a name for your trip</label>

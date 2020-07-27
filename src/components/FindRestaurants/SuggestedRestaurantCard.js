@@ -31,29 +31,7 @@ class SuggestedRestaurantCard extends Component {
         // map through restaurants lists to make sure that the restaurant wasn't added before
 
         this.props.addRestaurantToList(this.state.restaurant);
-        this.setState({
-            addedCheck: true
-        })
-        // this.setState({
-        //     addedCheck: [...this.props.savedRestaurants].includes(this.state.restaurant, 0)
-        // }, () => {
-        //     if (this.state.addedCheck !== true) {
-        //         this.setState({
-        //             restaurant: {
-        //                 ...this.state.restaurant,
-        //                 // added: true,
-        //             }
-        //         }, () => {
-        //             this.props.addRestaurantToList(this.state.restaurant);
-        //         })
-        //     } else {
-        //         // console.log("Ya RAB");
-        //         this.props.addRestaurantToList(this.state.restaurant);
-        //     }
-        // })
 
-        // console.log("state: ", this.state.restaurant);
-        // console.log("props: ", this.props.savedRestaurants);
 
     }
 
@@ -61,27 +39,18 @@ class SuggestedRestaurantCard extends Component {
         let elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i> add to list</button>;
 
 
-        // if (!this.state.addedCheck) {
-        //     elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i> add to list</button>
-        // } else {
-        //     elementToDisplay = <p><i className="addedToList" className="fas fa-check" aria-label="added to restaurant list"></i></p>
-        // }
-
-        const addedCheck = this.props.savedRestaurants.includes(this.state.restaurant);
-
+        let addedCheck;
+        if (this.props.savedRestaurants.some(restaurant => restaurant.name === this.state.restaurant.name)) {
+            addedCheck = true;
+        } else {
+            addedCheck = false;
+        }
+        
         if (!addedCheck) {
             elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i>Add to list</button>
         } else {
             elementToDisplay = <p className="addToList"><i className="fas fa-check" aria-label="added to restaurant list"></i></p>
         }
-
-        // this.props.savedRestaurants.filter((item) => {
-        //     if (item.name !== this.state.restaurant.name) {
-        //         return elementToDisplay = <button className="addToList" onClick={this.addToList}><i className="fas fa-plus" aria-hidden></i>Add to list</button>
-        //     } else {
-        //         return elementToDisplay = <p className="addToList"><i className="fas fa-check" aria-label="added to restaurant list"></i></p>
-        //     }
-        // })
 
         return (
             <div className="card">

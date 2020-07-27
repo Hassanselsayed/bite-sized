@@ -81,15 +81,21 @@ class SuggestedRestaurantList extends Component {
       }
   }
 
+  componentDidUpdate() {
+    console.log(this.state.savedRestaurants);
+  }
+
 
 
   // takes an individual restaurant object and appends it to savedRestaurants array in the state. This function is passed as props to SuggestedRestaurantCard component and is executed when user clicks the "add to list" button. It also calls a function from parent (NewTrip) that passes the savedRestarants array to it, and saves it in its state (in trip object)
   addRestaurantToList = (restaurantObj) => {
 
-    const addedCheck = this.state.savedRestaurants.includes(restaurantObj);
-    console.log(restaurantObj);
-    console.log(this.state.savedRestaurants);
-    console.log(addedCheck);
+    let addedCheck;
+    if (this.state.savedRestaurants.some(restaurant => restaurant.name === restaurantObj.name)) {
+      addedCheck = true;
+    } else {
+      addedCheck = false;
+    }
 
     if (!addedCheck) {
       this.setState(prevState => {
