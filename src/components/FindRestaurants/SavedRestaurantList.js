@@ -31,7 +31,6 @@ class SavedRestaurantList extends Component {
   render() {
     return (
       <div>
-        {/* Map through results array and passing the results on our saved restaurant card component */}
         <SavedRestaurantCard restaurants={this.state.savedRestaurant} removeRestaurantFromList={this.removeRestaurantFromList}/>
       </div>
     )

@@ -149,9 +149,7 @@ class NewTrip extends Component {
         this.setState({
             trip: prevState,
             tripNickName: this.text.value
-        }
-        // , () => console.log(this.state)
-        )
+        })
     }
 
     // this function will show the default restaurant list 

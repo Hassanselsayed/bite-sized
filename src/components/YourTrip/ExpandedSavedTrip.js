@@ -75,7 +75,6 @@ class ExpandedSavedTrip extends Component {
 
   render() {
     const tripObj = this.props.tripProp.trip;
-    console.log(tripObj);
 
     return (
       <div className="expandedSavedTrip">

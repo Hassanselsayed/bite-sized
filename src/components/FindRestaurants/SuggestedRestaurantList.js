@@ -74,11 +74,6 @@ class SuggestedRestaurantList extends Component {
         start: 0,
       }, () => {
       })
-      if (this.props.cityId !== this.state.cityId) {
-        this.setState({
-          // savedRestaurants: []
-        })
-      }
   }
 
 
@@ -98,24 +93,19 @@ class SuggestedRestaurantList extends Component {
       this.setState(prevState => {
         return {
           savedRestaurants: [...prevState.savedRestaurants, restaurantObj],
-          // added: true
         }
       }, () => {
         //  callback from NewTrip.js
           this.props.addRestaurantListToTrip(this.state.savedRestaurants, restaurantObj);
       })
-    } else {
-      console.log("Ya RAB");
     }
 
-    // this.props.addRestaurantListToTrip(this.state.savedRestaurants, restaurantObj);
 
 
   }
 
   displayMore = () => {
     this.setState({
-      // count: this.state.count + 10,
       start: this.state.start + 10
     }, () => {
       this.getRestaurantList(this.state.cityId);
@@ -153,7 +143,6 @@ class SuggestedRestaurantList extends Component {
         : ( this.state.isLoading === true )
         ? <p>loading restaurants...</p>
         : this.state.results.map((item) => {
-          // item.restaurant.added = this.state.added;
           return (
             // if the find restaurant button is clicked, show this
             <SuggestedRestaurantCard
