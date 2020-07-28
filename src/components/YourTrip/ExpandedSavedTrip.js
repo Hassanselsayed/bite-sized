@@ -46,7 +46,7 @@ class ExpandedSavedTrip extends Component {
       // find the index of the restaurant in the database
       restaurants.filter((restaurant, index) => {
         if (restaurant.name === targetRestaurantName) {
-          restaurantIndex = index;
+          return restaurantIndex = index;
         }
       })
     }))
