@@ -11,9 +11,6 @@ class SavedRestaurantList extends Component {
   }
   
   removeRestaurantFromList = (restaurantObj) => {
-    // if the restaurantobj.name is equal to the item that we're filtering over
-    // item.restaurnat.name
-    // if this name is not equal to
 
     const copyOfSavedRestaurant = [...this.state.savedRestaurant];
     const filteredArray = copyOfSavedRestaurant.filter((item) => {

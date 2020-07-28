@@ -81,9 +81,6 @@ class SuggestedRestaurantList extends Component {
       }
   }
 
-  componentDidUpdate() {
-    console.log(this.state.savedRestaurants);
-  }
 
 
 

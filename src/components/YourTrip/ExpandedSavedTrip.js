@@ -16,6 +16,19 @@ class ExpandedSavedTrip extends Component {
   // WORK IN PROGRESS
   // deleteRestaurant = (e) => {
   //   e.preventDefault();
+  //   const copyOfSavedRestaurant = [...this.state.savedRestaurant];
+  //   const filteredArray = copyOfSavedRestaurant.filter((item) => {
+  //     if (restaurantObj.name !== item.name) {
+  //       return item
+  //     } else {
+  //       return null
+  //     }
+  //   })
+  //   this.setState({
+  //     savedRestaurant: filteredArray
+  //   }, () => {
+  //     this.props.removeRestaurantFromList(this.state.savedRestaurant);
+  //   })
   // }
 
 
@@ -62,6 +75,7 @@ class ExpandedSavedTrip extends Component {
 
   render() {
     const tripObj = this.props.tripProp.trip;
+    console.log(tripObj);
 
     return (
       <div className="expandedSavedTrip">
@@ -100,7 +114,7 @@ class ExpandedSavedTrip extends Component {
                   } */}
 
                   {/* clicking this will delete the restaurant from the database */}
-                  <button onClick={this.deleteRestaurant}><i className="fas fa-times" aria-label="close"></i></button>
+                  {/* <button onClick={this.deleteRestaurant}><i className="fas fa-times" aria-label="close"></i></button> */}
                 </li>
               );
             }) }
