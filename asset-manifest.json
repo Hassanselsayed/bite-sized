@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/biteSized/static/css/main.ba8550fe.chunk.css",
-    "main.js": "/biteSized/static/js/main.4959c70d.chunk.js",
-    "main.js.map": "/biteSized/static/js/main.4959c70d.chunk.js.map",
-    "runtime-main.js": "/biteSized/static/js/runtime-main.116d607a.js",
-    "runtime-main.js.map": "/biteSized/static/js/runtime-main.116d607a.js.map",
-    "static/js/2.9149ece4.chunk.js": "/biteSized/static/js/2.9149ece4.chunk.js",
-    "static/js/2.9149ece4.chunk.js.map": "/biteSized/static/js/2.9149ece4.chunk.js.map",
-    "index.html": "/biteSized/index.html",
-    "precache-manifest.c0e8ec9fc2a27d1031c111ddc91920ce.js": "/biteSized/precache-manifest.c0e8ec9fc2a27d1031c111ddc91920ce.js",
-    "service-worker.js": "/biteSized/service-worker.js",
-    "static/css/main.ba8550fe.chunk.css.map": "/biteSized/static/css/main.ba8550fe.chunk.css.map",
-    "static/js/2.9149ece4.chunk.js.LICENSE.txt": "/biteSized/static/js/2.9149ece4.chunk.js.LICENSE.txt",
-    "static/media/headerIcon.png": "/biteSized/static/media/headerIcon.ffc65b8c.png",
-    "static/media/index.css": "/biteSized/static/media/hero.ea83ada1.jpg"
+    "main.css": "/bite-sized/static/css/main.117fff21.chunk.css",
+    "main.js": "/bite-sized/static/js/main.58a9225c.chunk.js",
+    "main.js.map": "/bite-sized/static/js/main.58a9225c.chunk.js.map",
+    "runtime-main.js": "/bite-sized/static/js/runtime-main.0209a34e.js",
+    "runtime-main.js.map": "/bite-sized/static/js/runtime-main.0209a34e.js.map",
+    "static/js/2.1ab73c3e.chunk.js": "/bite-sized/static/js/2.1ab73c3e.chunk.js",
+    "static/js/2.1ab73c3e.chunk.js.map": "/bite-sized/static/js/2.1ab73c3e.chunk.js.map",
+    "index.html": "/bite-sized/index.html",
+    "precache-manifest.70383fd5a603dba7181ed00e8aabba8d.js": "/bite-sized/precache-manifest.70383fd5a603dba7181ed00e8aabba8d.js",
+    "service-worker.js": "/bite-sized/service-worker.js",
+    "static/css/main.117fff21.chunk.css.map": "/bite-sized/static/css/main.117fff21.chunk.css.map",
+    "static/js/2.1ab73c3e.chunk.js.LICENSE.txt": "/bite-sized/static/js/2.1ab73c3e.chunk.js.LICENSE.txt",
+    "static/media/headerIcon.png": "/bite-sized/static/media/headerIcon.ffc65b8c.png",
+    "static/media/index.css": "/bite-sized/static/media/hero.ea83ada1.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.116d607a.js",
-    "static/js/2.9149ece4.chunk.js",
-    "static/css/main.ba8550fe.chunk.css",
-    "static/js/main.4959c70d.chunk.js"
+    "static/js/runtime-main.0209a34e.js",
+    "static/js/2.1ab73c3e.chunk.js",
+    "static/css/main.117fff21.chunk.css",
+    "static/js/main.58a9225c.chunk.js"
   ]
 }
